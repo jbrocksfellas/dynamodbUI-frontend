@@ -406,9 +406,9 @@ export default function DynamoUI() {
                 }
               >
                 <ListItemText>
-                  IndexName: {schema.IndexName}
+                  Index Name: {schema.IndexName}
                   <br />
-                  Attribute Name:{" "}
+                  Partition Key:{" "}
                   {schema.KeySchema.map((item) => item.AttributeName)}
                 </ListItemText>
               </ListItem>
