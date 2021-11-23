@@ -293,7 +293,7 @@ export default function DynamoUI() {
             Add
           </Button>
         </Grid>
-        <List sx={{ width: "100%" }}>
+        <List sx={{ width: "100%", margin: 2 }}>
           {attributeDefinitions.map((schema) => {
             return (
               <ListItem
@@ -389,7 +389,7 @@ export default function DynamoUI() {
             Add Index
           </Button>
         </Grid>
-        <List sx={{ width: "100%" }}>
+        <List sx={{ width: "100%", margin: 2 }}>
           {globalSecondaryIndexes.map((schema) => {
             return (
               <ListItem
