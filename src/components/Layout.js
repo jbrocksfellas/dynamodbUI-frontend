@@ -13,26 +13,35 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import { makeStyles } from "@mui/styles";
 
 const drawerWidth = 240;
+const useStyles = makeStyles({
+  listItem: {
+    "&:hover": {
+      backgroundColor: "#fd7e14",
+    },
+  },
+});
 
 function Layout(props) {
+  const classes = useStyles();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-    const links = [
-        {
-            name: "Create Table Schema",
-            path: "/"
-        },
-        {
-            name: "Import JSON",
-            path: "/import"
-        },
-        {
-            name: "Insert Item",
-            path: "/create-item"
-        }
-    ]
+  const links = [
+    {
+      name: "Create Table Schema",
+      path: "/",
+    },
+    {
+      name: "Import JSON",
+      path: "/import",
+    },
+    {
+      name: "Insert Item",
+      path: "/create-item",
+    },
+  ];
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -43,14 +52,18 @@ function Layout(props) {
       <Divider />
       <List>
         {links.map((text, index) => (
-          <ListItem button key={text.name} component={Link} to={text.path}
-          onClick={handleDrawerToggle}
+          <ListItem
+            button
+            key={text.name}
+            component={Link}
+            to={text.path}
+            onClick={handleDrawerToggle}
+            className={classes.listItem}
           >
             <ListItemText primary={text.name} />
           </ListItem>
         ))}
       </List>
-
     </div>
   );
 
@@ -131,13 +144,11 @@ function Layout(props) {
         <Toolbar />
         {props.children}
       </Box>
-      
     </Box>
   );
 }
 
 Layout.propTypes = {
-
   window: PropTypes.func,
 };
 
