@@ -2,6 +2,8 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import DynamoUI from './pages/DynamoUI';
 import { createTheme, ThemeProvider } from '@mui/material';
+import DynamoImport from './pages/DynamoImport';
+import DynamoCreateItem from './pages/DynamoCreateItem';
 
 const theme = createTheme({
   palette: {
@@ -19,6 +21,8 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={DynamoUI} />
+        <Route path="/import" component={DynamoImport} />
+        <Route path="/create-item" component={DynamoCreateItem} />
       </Switch>
     </Router>
     </ThemeProvider>

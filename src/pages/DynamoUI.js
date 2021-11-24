@@ -221,7 +221,7 @@ export default function DynamoUI() {
     <Container>
       <Grid container justifyContent="around" alignItems="center" spacing={2}>
         <Grid item xs={12} align="center">
-          <Typography variant="h6">DynamoDB Create Table</Typography>
+          <Typography variant="h6">DynamoDB Create Table Schema</Typography>
         </Grid>
         <Grid item xs={12} align="center">
           <TextField
