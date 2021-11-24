@@ -4,6 +4,7 @@ import DynamoUI from './pages/DynamoUI';
 import { createTheme, ThemeProvider } from '@mui/material';
 import DynamoImport from './pages/DynamoImport';
 import DynamoCreateItem from './pages/DynamoCreateItem';
+import Layout from './components/Layout';
 
 const theme = createTheme({
   palette: {
@@ -19,11 +20,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
     <Router>
+      <Layout>
       <Switch>
         <Route exact path="/" component={DynamoUI} />
         <Route path="/import" component={DynamoImport} />
         <Route path="/create-item" component={DynamoCreateItem} />
       </Switch>
+      </Layout>
     </Router>
     </ThemeProvider>
   );
